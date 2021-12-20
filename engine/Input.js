@@ -318,13 +318,35 @@ ENGINE.Input = function (game)
         relativeY:0 }
 
 
-
+    this.touchDown = [false,false,false,false,false,false,false,false,false,false];
     this.mouseDown = [false,false,false,false,false];
     this.keyDown = [];
     for (let i=0;i<256;i++)
         this.keyDown.push(false);
 
 
+
+
+    let th = function touchHandler(event)
+    {
+        var touches = event.changedTouches,
+            first = touches[0],
+            type = "";
+        switch(event.type)
+        {
+            case "touchstart": type = "mousedown"; break;
+            case "touchmove":  type = "mousemove"; break;
+            case "touchend":   type = "mouseup";   break;
+            default:           return;
+        }
+
+        var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent(type, true, true, window, 1,
+            first.screenX, first.screenY,
+            first.clientX, first.clientY, false,
+            false, false, false, (event.changedTouches>0 ? 2: 0), null);
+        first.target.dispatchEvent(simulatedEvent);
+    }
 
     document.addEventListener( 'mousedown',  function(e) {
 
@@ -333,6 +355,12 @@ ENGINE.Input = function (game)
 
         this.mouseDown[e.button] = true;
     }.bind(this));
+
+    document.addEventListener("touchstart", th, {passive:false});
+    document.addEventListener("touchmove", th, {passive:false});
+    document.addEventListener("touchend", th, {passive:false});
+    document.addEventListener("touchcancel", th, {passive:false});
+
 
     document.addEventListener( 'mouseup',  function(e) {
 
