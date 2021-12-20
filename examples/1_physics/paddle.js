@@ -30,18 +30,24 @@ Paddle.prototype.update= function (dt) {
     }
     if (this.game.input.isKeyDown(ENGINE.KeyCode.RIGHT))
     {
-        this.rigidbody.setRotation(r.x-this.rotationSpeed*dt,r.y,r.z);
+        r.x-=this.rotationSpeed*dt;
+        changed = true;
     }
 
     if (this.game.input.isKeyDown(ENGINE.KeyCode.UP))
     {
-        this.rigidbody.setRotation(r.x,r.y,r.z+this.rotationSpeed*dt);
+        r.z+=this.rotationSpeed*dt;
+        changed = true;
 
     }
     if (this.game.input.isKeyDown(ENGINE.KeyCode.DOWN))
     {
-        this.rigidbody.setRotation(r.x,r.y,r.z-this.rotationSpeed*dt);
+        r.z-=this.rotationSpeed*dt;
+        changed = true;
     }
+
+    if (changed)
+        this.rigidbody.setRotation(r.x,r.y,r.z);
 }
 
 Paddle.prototype.constructor = Paddle;

@@ -55,14 +55,14 @@
       },
       "components" : {
         "transform" : {
-          "position" : [0,0,0],
+          "position" : [0,-50,0],
           "rotation" : [0.1,0.01,0]
         },
         "renderer" : {
           "geometry":
           {
             "type":"BoxGeometry",
-            "size":[2000,100,2000]
+            "size":[2000,150,2000]
           },
           "material":
           {
@@ -74,7 +74,7 @@
           "move": true,
           "kinematic": true,
           "type": "box",
-          "size":[2000,100,2000]
+          "size":[2000,150,2000]
         }
 
       }
