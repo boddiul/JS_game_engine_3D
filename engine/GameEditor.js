@@ -206,7 +206,8 @@ ENGINE.GameEditor = function ()
 
     this.buttonPause =document.createElement("div");
     this.buttonPause.className = "editorButton"
-    this.buttonPause.textContent = "Start";
+    this.buttonPause.textContent = "Start Scene";
+    this.buttonPause.style.backgroundColor = "#26b81c"
     this.buttonPause.addEventListener('click', function () {
         this.pause();
     }.bind(this));
@@ -529,7 +530,8 @@ ENGINE.GameEditor.prototype = {
 
         }.bind(this),100)
 
-        this.buttonPause.textContent = "Start";
+        this.buttonPause.textContent = "Start Scene";
+        this.buttonPause.style.backgroundColor = "#26b81c"
 
         //this.game.start();
         //
@@ -540,11 +542,15 @@ ENGINE.GameEditor.prototype = {
         if (this.game.updating)
         {
             this.buttonPause.textContent = "Resume";
+
+            this.buttonPause.style.backgroundColor = "#4a7845"
             this.game.pause();
         }
         else
         {
             this.buttonPause.textContent = "Pause";
+
+            this.buttonPause.style.backgroundColor = "#484578"
             this.game.start();
         }
     }

@@ -15,6 +15,8 @@ Controller.prototype.init = function (params) {
 Controller.prototype.update= function (dt) {
 
 
+
+    /*
     this.game.ui.setOverlayText("MOUSE\n"+
         this.game.input.mouse.x+"\n"+
         this.game.input.mouse.y+"\n"+
@@ -24,7 +26,14 @@ Controller.prototype.update= function (dt) {
         this.game.input.isMouseDown(1)+"\n"+
         this.game.input.isMouseDown(2)+"\n"+
         this.game.input.isMouseDown(3)+"\n"+
-        this.game.input.isMouseDown(4))
+        this.game.input.isMouseDown(4))*/
+
+    this.game.ui.setOverlayText("MOUSE\n"+
+        "X: "+this.game.input.mouse.x+"\n"+
+        "Y: "+this.game.input.mouse.y+"\n"+"\n"+
+        "WASD + RIGHT MOUSE (MOVE) "+"\n"+
+        "LEFT MOUSE (LOOK)")
+
 }
 
 Controller.prototype.constructor = Controller;
