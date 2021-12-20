@@ -41,11 +41,13 @@ ENGINE.ComponentRigidbody = function (game,manager,gameObject,data) {
     this.setRotation = function (x,y,z) {
 
 
+        this.phys.resetRotation(x*180/Math.PI,y*180/Math.PI,z*180/Math.PI);
 
 
+        /*
         let r = (new THREE.Euler(x,y,z))
         let q = (new THREE.Quaternion()).setFromEuler(r);
-        this.phys.setQuaternion({x:q.x, y:q.y, z:q.z, w:q.w})
+        this.phys.setQuaternion({x:q.x, y:q.y, z:q.z, w:q.w})*/
 
     }
     this.getRotation = function () {

@@ -84,7 +84,7 @@ Controller.prototype.update= function (dt) {
     }
 
 
-    this.game.ui.setOverlayText("PRESS SPACE TO SPAWN OBJECT")
+    this.game.ui.setOverlayText("PRESS SPACE TO SPAWN OBJECTS"+"\n"+"ARROW KEYS TO MOVE THE BOARD"+"\n"+"WASD TO MOVE THE CAMERA")
 }
 
 Controller.prototype.constructor = Controller;

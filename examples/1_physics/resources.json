@@ -19,6 +19,10 @@
     {
       "id": "Controller",
       "url":"./examples/1_physics/controller.js"
+    },
+    {
+      "id": "Paddle",
+      "url":"./examples/1_physics/paddle.js"
     }
   ],
   "scenes": [
