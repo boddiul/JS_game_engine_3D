@@ -3,8 +3,6 @@ ENGINE.ComponentRenderer = function (game,manager,gameObject,data) {
 
 
 
-    console.log(game,gameObject,data)
-
     if (data!==undefined)
     {
 

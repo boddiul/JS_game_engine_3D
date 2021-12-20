@@ -68,7 +68,6 @@ ENGINE.ComponentRigidbody.prototype.update= function (dt) {
 
 
 
-    console.log(this.phys.quaternion)
     let t = this.phys.position;
 
     this.gameObject.transform.setPosition(t.x,t.y,t.z);
