@@ -1,0 +1,30 @@
+{
+  "textures": [
+    {
+      "id": "crate",
+      "url":"./examples/0_box/crate.gif"
+    },
+    {
+      "id": "marble",
+      "url":"./examples/marble.jpg"
+    }
+  ],
+
+
+  "scripts" : [
+    {
+      "id": "CameraOrbitController",
+      "url":"./examples/camera_orbit_controller.js"
+    },
+    {
+      "id": "Controller",
+      "url":"./examples/1_physics/controller.js"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "Scene1",
+      "url":"examples/1_physics/scene1.json"
+    }
+  ]
+}

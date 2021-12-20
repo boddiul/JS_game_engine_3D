@@ -1,0 +1,87 @@
+{
+  "settings":
+    {
+      "backgroundColor": "#212121"
+    }
+  ,
+  "objects": [
+    {
+      "type": "CameraOrbitController",
+      "params" : {
+        "centerPosition": [-100,0,0],
+        "distance" : 700
+      }
+    },
+    {
+      "type": "Controller"
+    },
+    {
+      "type": "Cube",
+      "params" : {"xRotation": -0.01, "yRotation": 0.01, "zRotation": 0},
+      "components" : {
+        "transform" : {
+          "position" : [0,0,-100]
+        }
+      }
+
+
+    },
+    {
+      "type": "Cube",
+      "params" : {"xRotation": -0.001, "yRotation": 0, "zRotation": 0.006},
+      "components" : {
+        "transform" : {
+          "position" : [0,0,200]
+        }
+      }
+    },
+    {
+      "type": "Cow",
+      "components" : {
+        "transform" : {
+          "position" : [0,-30,-350],
+          "scale": [20,20,20]
+        },
+        "renderer" : {
+          "geometry":
+          {
+            "type":"OBJGeometry",
+            "OBJ":"cow"
+          },
+          "material":
+          {
+            "type":"MeshBasicMaterial",
+            "color": "green"
+          }
+        }
+
+      }
+
+
+    },
+    {
+      "type": "Male",
+      "components" : {
+        "transform" : {
+          "position" : [0,0,-350],
+          "scale": [1,1,1]
+        },
+        "renderer" : {
+          "geometry":
+          {
+            "type":"OBJGeometry",
+            "OBJ":"male"
+          },
+          "material":
+          {
+            "type":"MeshBasicMaterial",
+            "texture":"uv_grid_opengl"
+          }
+        }
+
+      }
+
+
+    }
+  ]
+}

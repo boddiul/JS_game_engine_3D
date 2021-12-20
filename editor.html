@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+<head>
+    <title>JS Game Engine Player</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+    <script src="engine/min_libs/codemirror.min.js"></script>
+
+    <link rel="stylesheet" href="./engine/style.css">
+
+    <script src="engine/min_libs/stats.min.js"></script>
+
+    <script src="engine/min_libs/jquery-3.6.0.min.js"></script>
+    <script src="engine/min_libs/three.min.js"></script>
+    <script src="engine/min_libs/oimo.min.js"></script>
+
+
+
+    <script src="engine/GameEngine.js"></script>
+    <script src="engine/ResourcesManager.js"></script>
+    <script src="engine/Input.js"></script>
+    <script src="engine/UI.js"></script>
+    <script src="engine/Scene.js"></script>
+    <script src="engine/EntityManager.js"></script>
+    <script src="engine/ComponentManager.js"></script>
+    <script src="engine/Camera.js"></script>
+    <script src="engine/GameObject.js"></script>
+    <script src="engine/Component.js"></script>
+    <script src="engine/ComponentTransform.js"></script>
+    <script src="engine/ComponentRenderer.js"></script>
+    <script src="engine/ComponentRigidbody.js"></script>
+    <script src="engine/ComponentCollider.js"></script>
+
+    <script type="module" src="engine/Game.js"></script>
+
+    <script src="engine/GameEditor.js"></script>
+</head>
+
+<body>
+<script type="module">
+
+    let examples = {
+        "boxes" : {
+            resources : "examples/0_box/resources.json",
+            scene: "Scene1",
+            code : ["examples/0_box/resources.json","examples/0_box/scene1.json","examples/0_box/cube.js","examples/0_box/controller.js","examples/camera_orbit_controller.js","examples/0_box/scene2.json"]
+        },
+        "physics" : {
+            resources : "examples/1_physics/resources.json",
+            scene: "Scene1",
+            code : ["examples/1_physics/resources.json","examples/1_physics/scene1.json","examples/1_physics/controller.js"]
+        }
+    }
+
+    let defaultExample = "physics";
+    let exampleId = (new URL(window.location.href)).searchParams.get("example");
+
+    if (!exampleId || !(exampleId in examples))
+    {
+        exampleId = defaultExample;
+    }
+
+
+
+    let ge = new ENGINE.GameEditor();
+
+    ge.boot(examples[exampleId].resources,examples[exampleId].scene,ENGINE.Game.ADVANCED_LOOP);
+
+
+    ge.openCodeFromURLs(examples[exampleId].code)
+
+
+
+
+</script>
+
+<div class="editor">
+
+</div>
+
+
+
+</body>
+</html>

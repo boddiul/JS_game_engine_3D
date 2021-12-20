@@ -1,0 +1,48 @@
+{
+  "textures": [
+    {
+      "id": "crate",
+      "url":"./examples/0_box/crate.gif"
+    },
+    {
+      "id": "uv_grid_opengl",
+      "url":"./examples/uv_grid_opengl.jpg"
+    }
+  ],
+
+
+  "OBJ" : [
+    {
+      "id": "cow",
+      "url":"./examples/cow.obj"
+    },
+    {
+      "id": "male",
+      "url":"./examples/male02.obj"
+    }
+  ],
+  "scripts" : [
+    {
+      "id": "CameraOrbitController",
+      "url":"./examples/camera_orbit_controller.js"
+    },
+    {
+      "id": "Controller",
+      "url":"./examples/0_box/controller.js"
+    },
+    {
+      "id": "Cube",
+      "url":"./examples/0_box/cube.js"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "Scene1",
+      "url":"examples/0_box/scene1.json"
+    },
+    {
+      "id": "Scene2",
+      "url":"examples/0_box/scene2.json"
+    }
+  ]
+}

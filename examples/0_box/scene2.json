@@ -1,0 +1,30 @@
+{
+  "settings":
+    {
+      "backgroundColor": "#002121"
+    }
+  ,
+  "objects": [
+    {
+      "type": "CameraOrbitController",
+      "params" : {
+        "centerPosition": [-100,0,0],
+        "distance" : 700
+      }
+    },
+    {
+      "type": "Controller"
+    },
+    {
+      "type": "Cube",
+      "params" : {"xRotation": -0.01, "yRotation": 0.01, "zRotation": 0},
+      "components" : {
+        "transform" : {
+          "position" : [0,0,-100]
+        }
+      }
+
+
+    }
+  ]
+}

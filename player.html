@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+<head>
+    <title>JS Game Engine Player</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+
+    <link rel="stylesheet" href="./engine/style.css">
+
+    <script src="engine/min_libs/stats.min.js"></script>
+
+    <script src="engine/min_libs/jquery-3.6.0.min.js"></script>
+    <script src="engine/min_libs/three.min.js"></script>
+    <script src="engine/min_libs/oimo.min.js"></script>
+
+
+    <script src="engine/GameEngine.js"></script>
+    <script src="engine/ResourcesManager.js"></script>
+    <script src="engine/Input.js"></script>
+    <script src="engine/UI.js"></script>
+    <script src="engine/Scene.js"></script>
+    <script src="engine/EntityManager.js"></script>
+    <script src="engine/ComponentManager.js"></script>
+    <script src="engine/Camera.js"></script>
+    <script src="engine/GameObject.js"></script>
+    <script src="engine/Component.js"></script>
+    <script src="engine/ComponentTransform.js"></script>
+    <script src="engine/ComponentRenderer.js"></script>
+    <script src="engine/ComponentRigidbody.js"></script>
+    <script src="engine/ComponentCollider.js"></script>
+
+    <script type="module" src="engine/Game.js"></script>
+
+    <script src="engine/GamePlayer.js"></script>
+</head>
+
+<body>
+<script type="module">
+
+
+
+
+
+    let examples = {
+        "boxes" : {
+            resources : "examples/0_box/resources.json",
+            scene: "Scene1"
+        },
+        "physics" : {
+            resources : "examples/1_physics/resources.json",
+            scene: "Scene1"
+        }
+
+    }
+
+    let defaultExample = "boxes";
+    let exampleId = (new URL(window.location.href)).searchParams.get("example");
+
+    if (!exampleId || !(exampleId in examples))
+    {
+        exampleId = defaultExample;
+    }
+
+
+
+    let gp = new ENGINE.GamePlayer();
+    gp.boot(examples[exampleId].resources,ENGINE.Game.ADVANCED_LOOP,function () {
+
+        gp.play(examples[exampleId].scene);
+    });
+
+
+
+
+</script>
+
+<div class="game">
+</div>
+
+
+</body>
+</html>

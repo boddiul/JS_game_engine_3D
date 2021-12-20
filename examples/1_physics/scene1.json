@@ -1,0 +1,81 @@
+{
+  "settings":
+    {
+      "backgroundColor": "#122111",
+
+      "physics" : {
+        "gravity": [0,-200,0]
+      }
+    }
+  ,
+  "objects": [
+    {
+      "type": "CameraOrbitController",
+      "params" : {
+        "centerPosition": [0,350,0],
+        "distance" : 1000
+      }
+    },
+    {
+      "type": "Controller"
+    },
+    {
+      "type": "Ball",
+      "components" : {
+        "transform" : {
+          "position" : [0,600,0]
+        },
+        "renderer" : {
+          "geometry":
+          {
+            "type":"SphereGeometry",
+            "size":100
+          },
+          "material":
+          {
+            "type":"MeshBasicMaterial",
+            "texture":"marble"
+          }
+        },
+        "rigidbody": {
+            "move": true,
+            "type": "sphere",
+            "size":[100],
+            "restitution": 1.1
+        }
+
+      }
+
+
+    },
+    {
+      "type": "Floor",
+      "components" : {
+        "transform" : {
+          "position" : [0,0,0],
+          "rotation" : [0.1,0.01,0]
+        },
+        "renderer" : {
+          "geometry":
+          {
+            "type":"BoxGeometry",
+            "size":[2000,10,2000]
+          },
+          "material":
+          {
+            "type":"MeshBasicMaterial",
+            "texture":"crate"
+          }
+        },
+        "rigidbody": {
+          "move": false,
+          "type": "box",
+          "size":[2000,10,2000]
+        }
+
+      }
+
+
+    }
+  ]
+}
