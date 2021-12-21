@@ -10,7 +10,8 @@ ENGINE.ComponentManager = function (game,scene)
     this.components = {
         "transform":[],
         "renderer":[],
-        "rigidbody":[]
+        "rigidbody":[],
+        "collider":[]
     };
 
 
@@ -37,6 +38,10 @@ ENGINE.ComponentManager.prototype = {
 
                 c = new ENGINE.ComponentRigidbody(this.game,this,gameObject,initData);
                 break;
+            case "collider":
+
+                c = new ENGINE.ComponentCollider(this.game,this,gameObject,initData);
+                break;
         }
 
 
@@ -61,6 +66,14 @@ ENGINE.ComponentManager.prototype = {
 
         this.components["rigidbody"].forEach(function (c) {
             c.update(dt)
+        })
+
+        this.components["collider"].forEach(function (c) {
+            c.update(dt)
+        })
+
+        this.components["collider"].forEach(function (c) {
+            c.updateCollisions()
         })
     },
 

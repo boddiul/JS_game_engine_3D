@@ -21,17 +21,21 @@ Bullet.prototype.init = function (params) {
             }
     });
 
+    this.createColliderComponent({size:3})
+
 
     this.direction = new THREE.Vector3(params.direction[0],params.direction[1],params.direction[2])
 
     this.speed = params.speed;
-    this.destroyTime = 2;
+    this.destroyTime = 5;
 
 }
 
 Bullet.prototype.update= function (dt) {
 
 
+    if (this.collider.collidesObjectByType("Box") || this.collider.collidesObjectByType("Wall"))
+        this.destroy();
 
     let p = this.transform.getPosition();
 

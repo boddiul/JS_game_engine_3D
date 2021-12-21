@@ -97,7 +97,7 @@ Player.prototype.update= function (dt) {
             type:"Bullet",
             params:{
                 direction:[dir.x,dir.y,dir.z],
-                speed : 200
+                speed : 400
             },
             components:{
                 transform:{position:[v.x,v.y-10,v.z]}

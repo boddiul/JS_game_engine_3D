@@ -21,12 +21,16 @@ Box.prototype.init = function (params) {
             }
     });
 
+    this.createColliderComponent({size:params.size})
+
 
 }
 
 Box.prototype.update= function (dt) {
 
 
+    if (this.collider.collidesObjectByType("Bullet"))
+        this.destroy();
 
 
 }

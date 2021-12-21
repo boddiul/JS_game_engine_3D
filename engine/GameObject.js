@@ -46,6 +46,9 @@ ENGINE.GameObject.prototype = {
 
             if (typeof(components.rigidbody)!=="undefined")
                 this.renderer = this.createRigidbodyComponent(components.rigidbody);
+
+            if (typeof(components.collider)!=="undefined")
+                this.collider = this.createColliderComponent(components.collider);
         }
         else
         {
@@ -81,6 +84,9 @@ ENGINE.GameObject.prototype = {
 
         if (this.transform)
             this.transform.manager.destroy("transform",this.transform);
+
+        if (this.rigidbody)
+            this.rigidbody.manager.destroy("rigidbody",this.rigidbody);
     },
     createRendererComponent : function (data) {
 
@@ -90,6 +96,11 @@ ENGINE.GameObject.prototype = {
     createRigidbodyComponent : function (data) {
 
         this.rigidbody = this.game.scene.components.add("rigidbody",this,data);
+    },
+
+    createColliderComponent : function (data) {
+
+        this.collider = this.game.scene.components.add("collider",this,data);
     }
 
 }

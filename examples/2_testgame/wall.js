@@ -22,6 +22,8 @@ Wall.prototype.init = function (params) {
     });
 
 
+    this.createColliderComponent({size:params.size})
+
     /*
 
     this.createRigidbodyComponent({
