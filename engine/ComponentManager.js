@@ -62,6 +62,14 @@ ENGINE.ComponentManager.prototype = {
         this.components["rigidbody"].forEach(function (c) {
             c.update(dt)
         })
+    },
+
+    destroy : function (componentType,component) {
+        let index = this.components[componentType].indexOf(component);
+        if (index !== -1) {
+            this.components[componentType].splice(index, 1);
+            component.onDestroy();
+        }
     }
 
 }

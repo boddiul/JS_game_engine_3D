@@ -19,6 +19,7 @@ ENGINE.GameObject = function(game,manager,typeId,id) {
     this.rigidbody = null;
 
 
+    this.toDestroy = false;
 }
 
 
@@ -64,7 +65,23 @@ ENGINE.GameObject.prototype = {
 
     },
 
+    destroy : function() {
 
+        this.toDestroy = true;
+    },
+
+
+    onDestroy : function() {
+
+        if (this.renderer)
+            this.renderer.manager.destroy("renderer",this.renderer);
+
+        if (this.collider)
+            this.collider.manager.destroy("collider",this.collider);
+
+        if (this.transform)
+            this.transform.manager.destroy("transform",this.transform);
+    },
     createRendererComponent : function (data) {
 
         this.renderer = this.game.scene.components.add("renderer",this,data);

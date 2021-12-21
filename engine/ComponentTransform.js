@@ -69,6 +69,7 @@ ENGINE.ComponentTransform = function (game,manager,gameObject,data) {
     this.setScale = function (x,y,z) {
         this._threeTransform.scale.set(x,y,z);
     }
+
 };
 
 ENGINE.ComponentTransform.prototype = Object.create(ENGINE.Component.prototype);
@@ -78,7 +79,7 @@ ENGINE.ComponentTransform.prototype.update= function (dt) {
 
 }
 
-ENGINE.ComponentTransform.prototype.postUpdate= function () {
+ENGINE.ComponentTransform.prototype.onDestroy= function () {
 
 }
 

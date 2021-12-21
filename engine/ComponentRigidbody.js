@@ -61,6 +61,15 @@ ENGINE.ComponentRigidbody = function (game,manager,gameObject,data) {
 
         return r;
     }
+
+    this.applyImpulse = function (p,force) {
+
+
+        this.phys.applyImpulse(p,force);
+
+    }
+
+
 };
 
 ENGINE.ComponentRigidbody.prototype = Object.create(ENGINE.Component.prototype);
@@ -81,7 +90,7 @@ ENGINE.ComponentRigidbody.prototype.update= function (dt) {
 }
 
 
-ENGINE.ComponentRigidbody.prototype.postUpdate= function () {
+ENGINE.ComponentRigidbody.prototype.onDestroy= function () {
 
 }
 

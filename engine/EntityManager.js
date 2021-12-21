@@ -52,7 +52,21 @@ ENGINE.EntityManager.prototype = {
         });
 
 
+        let checkObject = this.objects.slice();
 
+        checkObject.forEach(function (o) {
+
+            if (o.toDestroy)
+            {
+                let index = this.objects.indexOf(o);
+                if (index !== -1) {
+                    this.objects.splice(index, 1);
+                }
+
+                ENGINE.GameObject.prototype.onDestroy.call(o,dt);
+            }
+
+        }.bind(this));
     },
 
 

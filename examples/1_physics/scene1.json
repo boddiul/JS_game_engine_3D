@@ -2,7 +2,6 @@
   "settings":
     {
       "backgroundColor": "#122111",
-
       "physics" : {
         "gravity": [0,-250,0]
       }

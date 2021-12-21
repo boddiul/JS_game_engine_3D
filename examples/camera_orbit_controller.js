@@ -39,7 +39,7 @@ CameraOrbitController.prototype.update= function (dt) {
 
 
 
-    if (this.game.debug.isCamera)
+    if (this.game.camera.isDebugMode())
         return;
 
     if (this.game.input.isMouseDown(ENGINE.Input.MOUSE_LEFT_BUTTON))

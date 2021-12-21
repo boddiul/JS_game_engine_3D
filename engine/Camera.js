@@ -33,6 +33,11 @@ ENGINE.Camera.prototype = {
            this.initDebug();
     },
 
+    isDebugMode : function() {
+
+
+        return this.debugMode;
+    },
 
 
     setPerspectiveMode : function(fov, near, far,isDebug) {

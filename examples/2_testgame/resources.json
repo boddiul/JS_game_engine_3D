@@ -1,0 +1,46 @@
+{
+  "textures": [
+    {
+      "id": "wall",
+      "url":"./examples/2_testgame/wall.bmp"
+    },
+    {
+      "id": "crate",
+      "url":"./examples/0_box/crate.gif"
+    }
+  ],
+
+
+  "scripts" : [
+    {
+      "id": "Wall",
+      "url":"./examples/2_testgame/wall.js"
+    },
+    {
+      "id": "Box",
+      "url":"./examples/2_testgame/box.js"
+    },
+    {
+      "id": "LevelBuilder",
+      "url":"./examples/2_testgame/levelBuilder.js"
+    },
+    {
+      "id": "Controller",
+      "url":"./examples/2_testgame/controller.js"
+    },
+    {
+      "id": "Player",
+      "url":"./examples/2_testgame/player.js"
+    },
+    {
+      "id": "Bullet",
+      "url":"./examples/2_testgame/bullet.js"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "Scene1",
+      "url":"examples/2_testgame/scene1.json"
+    }
+  ]
+}

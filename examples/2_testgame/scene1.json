@@ -1,0 +1,33 @@
+{
+  "settings":
+  {
+    "backgroundColor": "#122111",
+    "physics" : {
+      "gravity": [0,0,0]
+    }
+  }
+,
+  "objects": [
+    {
+      "type": "LevelBuilder",
+      "params" : {
+        "map" : [
+          "WWWWW",
+          "Wb..W",
+          "W...bW",
+          "W....W",
+          "W...bW"],
+        "startPosition": [0,0,0],
+        "blockSize": 100
+      }
+    },
+    {
+      "type": "Player",
+      "components":
+      {
+        "transform": {"position": [100,0,400]}
+      }
+    }
+
+  ]
+}

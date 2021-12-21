@@ -21,6 +21,10 @@ ENGINE.Component.prototype = {
 
     update : function (dt) {
 
+    },
+
+    onDestroy : function () {
+
     }
 }
 

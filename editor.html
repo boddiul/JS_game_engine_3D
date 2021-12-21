@@ -52,10 +52,15 @@
             resources : "examples/1_physics/resources.json",
             scene: "Scene1",
             code : ["examples/1_physics/resources.json","examples/1_physics/scene1.json","examples/1_physics/controller.js","examples/1_physics/paddle.js"]
+        },
+        "testgame" : {
+            resources : "examples/2_testgame/resources.json",
+            scene: "Scene1",
+            code : ["examples/2_testgame/resources.json","examples/2_testgame/scene1.json","examples/2_testgame/player.js","examples/2_testgame/bullet.js"]
         }
     }
 
-    let defaultExample = "physics";
+    let defaultExample = "testgame";
     let exampleId = (new URL(window.location.href)).searchParams.get("example");
 
     if (!exampleId || !(exampleId in examples))

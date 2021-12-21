@@ -15,9 +15,6 @@ ENGINE.ComponentRenderer = function (game,manager,gameObject,data) {
 
 ENGINE.ComponentRenderer.prototype = Object.create(ENGINE.Component.prototype);
 
-ENGINE.ComponentRenderer.prototype.update= function (dt) {
-
-}
 
 ENGINE.ComponentRenderer.prototype.update = function (dt) {
 
@@ -32,4 +29,9 @@ ENGINE.ComponentRenderer.prototype.update = function (dt) {
 
 }
 
+ENGINE.ComponentRenderer.prototype.onDestroy= function () {
+
+    this.game.rendererSend({action:"removeObject",args:{id:this.gameObject.id}})
+
+}
 ENGINE.ComponentRenderer.prototype.constructor = ENGINE.ComponentRenderer;

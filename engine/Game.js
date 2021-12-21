@@ -295,6 +295,7 @@ ENGINE.Game.prototype = {
             this.scene.update(dt);
 
 
+        this.ui.update(dt);
         /*
         let number  =0;
         for (let i = 0; i < 2000000; i ++ ) {

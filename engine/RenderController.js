@@ -205,6 +205,14 @@ function RenderController() {
     }
 
 
+    this.removeObject = function (args) {
+
+
+
+        this.scene.remove(this.object[args.id]);
+        delete this.object[args.id];
+    }
+
 
     this.render = function () {
 
