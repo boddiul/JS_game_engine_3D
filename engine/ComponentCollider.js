@@ -10,6 +10,24 @@ ENGINE.ComponentCollider= function (game,manager,gameObject,data) {
 
     this.collidesType = {};
 
+
+    /*
+    this.game.rendererSend({action:"addObject",args:{id:this.gameObject.id+"collider",data: {
+                geometry:
+                    {
+                        type:"BoxGeometry",
+                        size:[this.size*1.05,this.size*1.05,this.size*1.05]
+                    },
+                material:
+                    {
+                        type:"MeshBasicMaterial",
+                        color:"yellow",
+                        opacity: 0.2
+                    }
+            }}})*/
+
+
+
     this.collidesObjectByType = function (typeId) {
 
         return (typeId in this.collidesType);
@@ -46,6 +64,9 @@ ENGINE.ComponentCollider.prototype.update= function (dt) {
     let p = this.gameObject.transform.getPosition();
     this.box = new THREE.Box3(new THREE.Vector3(p.x-this.size/2,p.y-this.size/2,p.z-this.size/2),new THREE.Vector3(p.x+this.size/2,p.y+this.size/2,p.z+this.size/2))
 
+
+
+    //this.game.rendererSend({action:"setObjectPosition",args: {id:this.gameObject.id+"collider",x:p.x,y:p.y,z:p.z}})
 }
 
 ENGINE.ComponentCollider.prototype.onDestroy= function () {

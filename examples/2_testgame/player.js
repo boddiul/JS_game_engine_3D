@@ -7,29 +7,6 @@ Player.prototype = Object.create(ENGINE.GameObject.prototype);
 Player.prototype.init = function (params) {
 
 
-    /*
-    this.createRigidbodyComponent({
-        "kinematic":true,
-        "move":true,
-        "density":1,
-        "type": "sphere",
-        "size":[10]
-    });
-
-
-    this.createRendererComponent({
-        geometry:
-            {
-                type:"BoxGeometry",
-                size:[10,50,20]
-            },
-        material:
-            {
-                type:"MeshBasicMaterial",
-                color:"blue"
-            }
-    })*/
-
     this.direction = 90;
     this.rotationSpeed = 180;
     this.moveSpeed = 5;
@@ -63,9 +40,6 @@ Player.prototype.update= function (dt) {
 
         if (this.game.input.isKeyDown(p[0]))
         {
-            /*let dd = (new THREE.Vector3(p[1][0]*this.dist*dt,p[1][1]*this.dist*dt,p[1][2]*this.dist*dt));
-            dd.applyAxisAngle( new THREE.Vector3( 0, 1, 0 ), this.posW*Math.PI/2 );
-            this.centerPos.add(dd);*/
 
             let dd = (new THREE.Vector3(p[1][0]*this.moveSpeed,p[1][1]*this.moveSpeed,p[1][2]*this.moveSpeed));
             dd.applyAxisAngle( new THREE.Vector3( 0, 1, 0 ), this.direction/180*Math.PI );

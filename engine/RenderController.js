@@ -158,6 +158,11 @@ function RenderController() {
                     params.color = new THREE.Color(args.data.material.color);
                 }
 
+                if (typeof(args.data.material.opacity)!=="undefined")
+                {
+                    //params.opacity = args.data.material.opacity;
+                    //params.renderOrder = 2;
+                }
 
 
 

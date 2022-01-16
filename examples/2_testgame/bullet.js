@@ -21,7 +21,7 @@ Bullet.prototype.init = function (params) {
             }
     });
 
-    this.createColliderComponent({size:3})
+    this.createColliderComponent({size:6})
 
 
     this.direction = new THREE.Vector3(params.direction[0],params.direction[1],params.direction[2])
